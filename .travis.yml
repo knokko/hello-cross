@@ -53,12 +53,12 @@ matrix:
     - env: TARGET=x86_64-pc-windows-gnu
 
     # MinGW
-    - TARGET: i686-pc-windows-gnu
-    - TARGET: x86_64-pc-windows-gnu
+    - env: TARGET=i686-pc-windows-gnu
+    - env: TARGET=x86_64-pc-windows-gnu
 
     # MSVC
-    - TARGET: i686-pc-windows-msvc
-    - TARGET: x86_64-pc-windows-msvc
+    - env: TARGET=i686-pc-windows-msvc
+    - env: TARGET=x86_64-pc-windows-msvc
 
 before_install:
   - set -e

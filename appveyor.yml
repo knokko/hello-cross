@@ -10,44 +10,43 @@ environment:
   matrix:
 
     # Android
-    - env: TARGET=aarch64-linux-android DISABLE_TESTS=1
-    - env: TARGET=arm-linux-androideabi DISABLE_TESTS=1
-    - env: TARGET=armv7-linux-androideabi DISABLE_TESTS=1
-    - env: TARGET=i686-linux-android DISABLE_TESTS=1
-    - env: TARGET=x86_64-linux-android DISABLE_TESTS=1
+    - target: aarch64-linux-android DISABLE_TESTS=1
+    - target: arm-linux-androideabi DISABLE_TESTS=1
+    - target: armv7-linux-androideabi DISABLE_TESTS=1
+    - target: i686-linux-android DISABLE_TESTS=1
+    - target: x86_64-linux-android DISABLE_TESTS=1
 
     # iOS
-    - env: TARGET=aarch64-apple-ios DISABLE_TESTS=1
+    - target: aarch64-apple-ios DISABLE_TESTS=1
       os: osx
-    - env: TARGET=x86_64-apple-ios DISABLE_TESTS=1
+    - target: x86_64-apple-ios DISABLE_TESTS=1
       os: osx
 
     # Linux
-    - env: TARGET=aarch64-unknown-linux-gnu
-    - env: TARGET=arm-unknown-linux-gnueabi
-    - env: TARGET=armv7-unknown-linux-gnueabihf
-    - env: TARGET=i686-unknown-linux-gnu
-    - env: TARGET=i686-unknown-linux-musl
-    - env: TARGET=mips-unknown-linux-gnu
-    - env: TARGET=mips64-unknown-linux-gnuabi64
-    - env: TARGET=mips64el-unknown-linux-gnuabi64
-    - env: TARGET=mipsel-unknown-linux-gnu
-    - env: TARGET=powerpc-unknown-linux-gnu
-    - env: TARGET=powerpc64-unknown-linux-gnu
-    - env: TARGET=powerpc64le-unknown-linux-gnu
-    - env: TARGET=s390x-unknown-linux-gnu DISABLE_TESTS=1
-    - env: TARGET=x86_64-unknown-linux-gnu
-    - env: TARGET=x86_64-unknown-linux-musl
+    - target: aarch64-unknown-linux-gnu
+    - target: arm-unknown-linux-gnueabi
+    - target: armv7-unknown-linux-gnueabihf
+    - target: i686-unknown-linux-gnu
+    - target: i686-unknown-linux-musl
+    - target: mips-unknown-linux-gnu
+    - target: mips64-unknown-linux-gnuabi64
+    - target: mips64el-unknown-linux-gnuabi64
+    - target: mipsel-unknown-linux-gnu
+    - target: powerpc-unknown-linux-gnu
+    - target: powerpc64-unknown-linux-gnu
+    - target: powerpc64le-unknown-linux-gnu
+    - target: s390x-unknown-linux-gnu DISABLE_TESTS=1
+    - target: x86_64-unknown-linux-gnu
+    - TARGET: x86_64-unknown-linux-musl
 
     # OSX
-    - env: TARGET=x86_64-apple-darwin
-      os: osx
+    - TARGET: x86_64-apple-darwin
 
     # *BSD
-    - env: TARGET=x86_64-unknown-netbsd DISABLE_TESTS=1
+    - TARGET: x86_64-unknown-netbsd DISABLE_TESTS=1
 
     # Windows
-    - env: TARGET=x86_64-pc-windows-gnu
+    - TARGET: x86_64-pc-windows-gnu
 
     # MinGW
     - TARGET: i686-pc-windows-gnu
