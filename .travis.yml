@@ -22,12 +22,6 @@ matrix:
     # iOS
     - env: TARGET=aarch64-apple-ios DISABLE_TESTS=1
       os: osx
-    - env: TARGET=armv7-apple-ios DISABLE_TESTS=1
-      os: osx
-    - env: TARGET=armv7s-apple-ios DISABLE_TESTS=1
-      os: osx
-    - env: TARGET=i386-apple-ios DISABLE_TESTS=1
-      os: osx
     - env: TARGET=x86_64-apple-ios DISABLE_TESTS=1
       os: osx
 
@@ -49,14 +43,10 @@ matrix:
     - env: TARGET=x86_64-unknown-linux-musl
 
     # OSX
-    - env: TARGET=i686-apple-darwin
-      os: osx
     - env: TARGET=x86_64-apple-darwin
       os: osx
 
     # *BSD
-    - env: TARGET=i686-unknown-freebsd DISABLE_TESTS=1
-    - env: TARGET=x86_64-unknown-freebsd DISABLE_TESTS=1
     - env: TARGET=x86_64-unknown-netbsd DISABLE_TESTS=1
 
     # Windows
@@ -94,19 +84,11 @@ before_deploy:
   - sh ci/before_deploy.sh
 
 deploy:
-  # DONE update `api_key.secure`
-  # - Create a `public_repo` GitHub token. Go to: https://github.com/settings/tokens/new
-  # - Encrypt it: `travis encrypt 0123456789012345678901234567890123456789
-  # - Paste the output down here
   api_key:
     secure: jCmATjeWBlUo34Rj8Fqbbp6sDWXtpLgOkNa9iD78UKubZupZSxvE57NZ0nrTtjIKVDHlM9adOrA+OUnRxU1mFhGfNlfhVFgMiOAT8L+RlkvGr9kPAjtPYu19JrqNQ6sYLxnlx9B7175ds6MTU9Ls95qrhliKgaVNlvqdttTgbbQbgBghxK6fwg2KCb1XUj8CKdvvZZeJ5RS5tH2ssN4mIPyVTpytbJ/1v/xqUZe+13poojri8UGW1tThH/JAdXIWUDLE4DsY+JYm0AnAbfCNtL1BiZ+IqjZW63et+o7YaOuhAemYopEWIsDxPC29Ytlhh5qo3bYogK0CcLbRV8d5laF4vg0ch5/1cuUk5EE3DywXzfq7Bdm/pbuc0stAKjP93eNY5/0lOYKo6Ss8RVMtEVRpsOEoeu1W0VCSg5F3YSe2Mfwr17aiZiQWa4qPsIzg7uxOz25qYQPu1nlbz84lml60Mz/rPHyg3HuVEgHp53e3TaziGZapk7S6pF0+j9iPHW1mh53uV6OdfxPtZ05kK72g0vcFdbEEaR/bv39/j9Ru8h83hMiABofOsx2uzUNgei7E0xJHJiXnA0r5EcCUelPMrF53fmIMr48f5tDeK3wTgsRHLJ/hQbjr3CJMIcR7KpS28tqLcJj6xzxS/WwHZfumkF4Xw/rmTA+qj7cZkQE=
   file_glob: true
   file: $CRATE_NAME-$TRAVIS_TAG-$TARGET.*
   on:
-    # DONE Here you can pick which targets will generate binary releases
-    # In this example, there are some targets that are tested using the stable
-    # and nightly channels. This condition makes sure there is only one release
-    # for such targets and that's generated using the stable channel
     condition: $TRAVIS_RUST_VERSION = stable
     tags: true
   provider: releases

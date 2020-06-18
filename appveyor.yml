@@ -4,8 +4,6 @@
 environment:
   global:
     RUST_VERSION: stable
-
-    # TODO Update this to match the name of your project.
     CRATE_NAME: hello_cross
 
   # don't need
