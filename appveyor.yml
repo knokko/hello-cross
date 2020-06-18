@@ -6,37 +6,36 @@ environment:
     RUST_VERSION: stable
     CRATE_NAME: hello_cross
 
-  # don't need
   matrix:
 
     # Android
-    - target: aarch64-linux-android DISABLE_TESTS=1
-    - target: arm-linux-androideabi DISABLE_TESTS=1
-    - target: armv7-linux-androideabi DISABLE_TESTS=1
-    - target: i686-linux-android DISABLE_TESTS=1
-    - target: x86_64-linux-android DISABLE_TESTS=1
+    - TARGET: aarch64-linux-android DISABLE_TESTS=1
+    - TARGET: arm-linux-androideabi DISABLE_TESTS=1
+    - TARGET: armv7-linux-androideabi DISABLE_TESTS=1
+    - TARGET: i686-linux-android DISABLE_TESTS=1
+    - TARGET: x86_64-linux-android DISABLE_TESTS=1
 
     # iOS
-    - target: aarch64-apple-ios DISABLE_TESTS=1
+    - TARGET: aarch64-apple-ios DISABLE_TESTS=1
       os: osx
-    - target: x86_64-apple-ios DISABLE_TESTS=1
+    - TARGET: x86_64-apple-ios DISABLE_TESTS=1
       os: osx
 
     # Linux
-    - target: aarch64-unknown-linux-gnu
-    - target: arm-unknown-linux-gnueabi
-    - target: armv7-unknown-linux-gnueabihf
-    - target: i686-unknown-linux-gnu
-    - target: i686-unknown-linux-musl
-    - target: mips-unknown-linux-gnu
-    - target: mips64-unknown-linux-gnuabi64
-    - target: mips64el-unknown-linux-gnuabi64
-    - target: mipsel-unknown-linux-gnu
-    - target: powerpc-unknown-linux-gnu
-    - target: powerpc64-unknown-linux-gnu
-    - target: powerpc64le-unknown-linux-gnu
-    - target: s390x-unknown-linux-gnu DISABLE_TESTS=1
-    - target: x86_64-unknown-linux-gnu
+    - TARGET: aarch64-unknown-linux-gnu
+    - TARGET: arm-unknown-linux-gnueabi
+    - TARGET: armv7-unknown-linux-gnueabihf
+    - TARGET: i686-unknown-linux-gnu
+    - TARGET: i686-unknown-linux-musl
+    - TARGET: mips-unknown-linux-gnu
+    - TARGET: mips64-unknown-linux-gnuabi64
+    - TARGET: mips64el-unknown-linux-gnuabi64
+    - TARGET: mipsel-unknown-linux-gnu
+    - TARGET: powerpc-unknown-linux-gnu
+    - TARGET: powerpc64-unknown-linux-gnu
+    - TARGET: powerpc64le-unknown-linux-gnu
+    - TARGET: s390x-unknown-linux-gnu DISABLE_TESTS=1
+    - TARGET: x86_64-unknown-linux-gnu
     - TARGET: x86_64-unknown-linux-musl
 
     # OSX
@@ -44,9 +43,6 @@ environment:
 
     # *BSD
     - TARGET: x86_64-unknown-netbsd DISABLE_TESTS=1
-
-    # Windows
-    - TARGET: x86_64-pc-windows-gnu
 
     # MinGW
     - TARGET: i686-pc-windows-gnu
