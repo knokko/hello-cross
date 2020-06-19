@@ -9,16 +9,16 @@ environment:
   matrix:
 
     # Android
-    - TARGET: aarch64-linux-android DISABLE_TESTS=1
-    - TARGET: arm-linux-androideabi DISABLE_TESTS=1
-    - TARGET: armv7-linux-androideabi DISABLE_TESTS=1
-    - TARGET: i686-linux-android DISABLE_TESTS=1
-    - TARGET: x86_64-linux-android DISABLE_TESTS=1
+    - TARGET: aarch64-linux-android 
+    - TARGET: arm-linux-androideabi 
+    - TARGET: armv7-linux-androideabi 
+    - TARGET: i686-linux-android 
+    - TARGET: x86_64-linux-android 
 
     # iOS
-    - TARGET: aarch64-apple-ios DISABLE_TESTS=1
+    - TARGET: aarch64-apple-ios 
       os: osx
-    - TARGET: x86_64-apple-ios DISABLE_TESTS=1
+    - TARGET: x86_64-apple-ios 
       os: osx
 
     # Linux
@@ -34,7 +34,7 @@ environment:
     - TARGET: powerpc-unknown-linux-gnu
     - TARGET: powerpc64-unknown-linux-gnu
     - TARGET: powerpc64le-unknown-linux-gnu
-    - TARGET: s390x-unknown-linux-gnu DISABLE_TESTS=1
+    - TARGET: s390x-unknown-linux-gnu 
     - TARGET: x86_64-unknown-linux-gnu
     - TARGET: x86_64-unknown-linux-musl
 
@@ -42,7 +42,7 @@ environment:
     - TARGET: x86_64-apple-darwin
 
     # *BSD
-    - TARGET: x86_64-unknown-netbsd DISABLE_TESTS=1
+    - TARGET: x86_64-unknown-netbsd 
 
     # MinGW
     - TARGET: i686-pc-windows-gnu
